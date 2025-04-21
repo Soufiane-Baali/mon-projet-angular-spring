@@ -1,0 +1,16 @@
+<h2>{{ isEditMode ? 'Modifier' : 'Ajouter' }} un contact</h2>
+
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <label>Nom :</label>
+  <input type="text" formControlName="name" />
+
+  <label>Email :</label>
+  <input type="email" formControlName="email" />
+
+  <label>Téléphone :</label>
+  <input type="text" formControlName="phone" />
+
+  <button type="submit" [disabled]="contactForm.invalid">
+    {{ isEditMode ? 'Mettre à jour' : 'Ajouter' }}
+  </button>
+</form>
